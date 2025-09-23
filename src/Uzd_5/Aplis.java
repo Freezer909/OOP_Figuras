@@ -18,12 +18,12 @@ public class Aplis {
 		double C;
 		C =2*Math.PI*radiuss;
 		
-		return C;
+		return Math.round(C*100.0)/100.0;
 	}
 	//Riņķa laukum apreiķināšanai
 	public double rLaukums() {
 		double S;
 		S = Math.PI*Math.pow(radiuss, 2);
-		return S;
+		return Math.round(S*100.0)/100.0;
 	}
 }

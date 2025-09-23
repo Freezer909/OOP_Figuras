@@ -14,7 +14,7 @@ public class Aplis {
 		return"Radiuss: "+radiuss;
 	}
 	//Izveido metodi riņķa līnijas apreiķināšanai
-	public double RLinijasApr() {
+	public double RLinijasGarums() {
 		double C;
 		C =2*Math.PI*radiuss;
 		

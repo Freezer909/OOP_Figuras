@@ -1,9 +1,10 @@
 package Uzd_5;
+import Uzd_1.MinkaTante;
 
 public class Figuras {
 
 	public static void main(String[] args) {
-		//Izveido Centrs objektu
+		/*//Izveido Centrs objektu
 		Centrs centraP1 = new Centrs(-10, 12);
 		System.out.println(centraP1.izvaditKordinatas());
 		centraP1.parvietot(5, -2);
@@ -24,7 +25,29 @@ public class Figuras {
 		Centrs punkts2 = new Centrs (5, 23);
 		Aplis aplis1 = new Aplis(punkts2, 5);
 		System.out.println(aplis1.izvadiAplaInfo()+"\nS = "+
-		aplis1.rLaukums()+"\nC = "+aplis1.RLinijasGarums());
+		aplis1.rLaukums()+"\nC = "+aplis1.RLinijasGarums());*/
+		int cObjSk = 
+				MinkaTante.skaitlaParbaude("Cik centra objektus glabāsi", 1, 99);
+		if(cObjSk == -1)
+			cObjSk = 1;
+		Centrs[] centraObjekti = new Centrs[cObjSk];
+		
+		int ceObjSk = 
+				MinkaTante.skaitlaParbaude("Cik četrstūra objektus glabāsi", 1, 99);
+		if(ceObjSk == -1)
+			ceObjSk = 1;
+		Centrs[] centrsturaObjekti = new Centrs[ceObjSk];
+		int aObjSk = 
+				MinkaTante.skaitlaParbaude("Cik apļa objektus glabāsi", 1, 99);
+		if(aObjSk == -1)
+			aObjSk = 1;
+		Centrs[] aplaObjekti = new Centrs[aObjSk];
+		int tObjSk = 
+				MinkaTante.skaitlaParbaude("Cik trijstūra objektus glabāsi", 1, 99);
+		if(tObjSk == -1)
+			tObjSk = 1;
+		Centrs[] trijsturabjekti = new Centrs[tObjSk];
+		
 	}
 
 }

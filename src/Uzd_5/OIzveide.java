@@ -9,8 +9,11 @@ public class OIzveide {
 	static int cPIzvele() {
 		if (Figuras.centraObjekti.size() < 1)
 			return -1;
-		else
-		return Integer.parseInt(JOptionPane.showInputDialog(null, IzveidotieObjekti.izvadit(Figuras.centraObjekti)));
+		
+		int izvele = MinkaTante.skaitlaParbaude(IzveidotieObjekti.izvadit(Figuras.centraObjekti), 0, Figuras.centraObjekti.size()-1);
+
+		
+		return izvele;
 	}
 	
 	static void izveidotObjektu() {
@@ -30,8 +33,13 @@ public class OIzveide {
 			"Ievadi centra punkta x koordinātas", -100, 100);
 			y = MinkaTante.skaitlaParbaude(
 			"Ievadi centra punkta y koordinātas", -100, 100);
+			if((x == -1 || y == -1) && MinkaTante.ievade == null) {
+				JOptionPane.showMessageDialog(null, "Centra punkts netika izveidots!!", "Warning", JOptionPane.WARNING_MESSAGE);
+				break;
+			}
 			// Izveidot centra punkta objektu un ielikt dinamiskajā masīvā
 			Figuras.centraObjekti.add(new Centrs(x, y));
+			JOptionPane.showMessageDialog(null, "Centra punkts izveidots!", "Paziņojums", JOptionPane.INFORMATION_MESSAGE);
 			break;
 			
 		case 1:
@@ -49,20 +57,27 @@ public class OIzveide {
 			switch (veids) {
 			case "Noklusējuma":
 				Figuras.cetrsturaObjekti.add(new Cetrsturis());
+				JOptionPane.showMessageDialog(null, "Noklusējuma četrsturis izveidots", "Paziņojums", JOptionPane.INFORMATION_MESSAGE);
 				break;
 				
 			case "Centra punkts un malas":
 				cPNr = cPIzvele();
 				if (cPNr == -1) {
-					JOptionPane.showMessageDialog(null, "Nav uztaisīts centra punkts!", "Kļūda?", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "netika izmantots centra punkts!", "Kļūda?", JOptionPane.ERROR_MESSAGE);
 					break;
 				}
 				p = MinkaTante.skaitlaParbaude(
 						"Ievadi četrstūra platumu", 1, 100);
 				a = MinkaTante.skaitlaParbaude(
 						"Ievadi četrstūra augstumu", 1, 100);
+				
+				if(p == -1 || a == -1) {
+					JOptionPane.showMessageDialog(null, "Četrsturis netika izveidots!", "Brīdinājums", JOptionPane.WARNING_MESSAGE);
+				}
+				
 				Figuras.cetrsturaObjekti.add(new Cetrsturis(
 						Figuras.centraObjekti.get(cPNr), p, a));
+				JOptionPane.showMessageDialog(null, "Četrsturis izveidots!", "Paziņojums", JOptionPane.INFORMATION_MESSAGE);
 				break;
 			}
 			break;
@@ -75,6 +90,7 @@ public class OIzveide {
 			}
 			int r = MinkaTante.skaitlaParbaude("Ievadi apļa radiusu", 1, 100);
 			Figuras.aplaObjekti.add(new Aplis(Figuras.centraObjekti.get(cPNr), r));
+			JOptionPane.showMessageDialog(null, "Aplis izveidots izveidots!", "Paziņojums", JOptionPane.INFORMATION_MESSAGE);
 			break;
 			
 		case 3:
@@ -92,6 +108,7 @@ public class OIzveide {
 			if(m1 == -1 || m2 == -1 || m3 == -1)
 				break;
 					Figuras.trijsturaObjekti.add(new Trijsturis(Figuras.centraObjekti.get(cPNr), m1, m2, m3));
+					JOptionPane.showMessageDialog(null, "Trijsturis izveidots!", "Paziņojums", JOptionPane.INFORMATION_MESSAGE);
 			break;
 			
 		case 4:

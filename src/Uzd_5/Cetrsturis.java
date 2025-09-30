@@ -16,7 +16,7 @@ public class Cetrsturis {
 	}
 	
 	public String izvaditCetrsturaInfo() {
-		return"Platums: "+platums+"cm augstums: "+augstums+"cm";
+		return"Platums: "+platums+"cm Augstums: "+augstums+"cm";
 	}
 	
 	//Uztaisīt metodi, kas apreiķina laukumu
